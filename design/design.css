@@ -1,0 +1,20 @@
+.table-line{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid;
+  font-size:12px;
+}
+  th{
+    padding:10px;
+    text-align:left;
+    border-bottom:1px solid;
+    border-right:1px solid;
+  }
+  td{
+    padding: 10px
+    border-bottom:1px solid;
+    border-right:1px solid;
+  }
+
+
+<!-- コメント -->
