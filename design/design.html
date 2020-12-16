@@ -6,94 +6,89 @@
   <title>To Do List</title>
 <head>
 
-
-
 <body>
-  <div id="web-box">
-  <h1>To Do List</p>
-  <div class="add-tasks"> <input type="text" class="form-control ToDoList-input"
-  placeholder="title..."> <button class="add-button">ADD</button> </div>
-  
+  <h1 class="title">To Do List</h1>
+  <div class="add-tasks"> 
+  <input type="text" placeholder="title...">  
+  <button class="add-button">ADD</button> 
+  </div>
+    <div class="table-color">
     <table class="table-line">
-        <tr class="table-caption">
-          <th>Tasks</th>
-          <th>Deadline</th>
+        <tr class="line-horizontal-th">
+          <th class="line-vertical-th">Tasks</th>
+          <th></th>
+          <th class="line-vertical-th">Deadline</th>
           <th>Status</th>
         </tr>
-        <tr>
-          <td>
+        <tr class = "line-horizontal-td">
+          <td class = "line-vertical-td">
               <ul class="d-flex">
-              <li>
-                <div class"form-check"> <label class="form-check-label"> 
-                <input class="checkbox" type="checkbox"> Soft ware
-                <i class="input-helper"> </i> <label>
-                </div> <i class="remove mdi mdi-close-circle-outline"></i>
-              </li>
+              <li>                
+                <input class="checkbox" type="checkbox"> 
+                <div class="text-box"> Soft ware </div>               
+              </li>       
           </td>
           <td>
+          <div class="remove-button"><span></span></div>
+          </td>
+          <td class="line-vertical-td">
           2020 12/10 (10days)
           </td>
           <td>
           to do
           </td>
         </tr>        
-        <tr>
-          <td>
+        <tr class = "line-horizontal-td">
+          <td class="line-vertical-td">
               <ul class="d-flex">
-              <li>
-                <div class"form-check"> <label class="form-check-label"> 
-                <input class="checkbox" type="checkbox" checked=""> OS
-                <i class="input-helper"> </i> <label>
-                </div> <i class="remove mdi mdi-close-circle-outline"></i>
+              <li>                
+                <input class="checkbox" type="checkbox" checked=""> OS        
               </li>
           </td>
           <td>
+          <div class="remove-button"><span></span></div>
+          </td>
+          <td class="line-vertical-td">
           2020 12/1 (1days)
           </td>
           <td>
           to do
           </td>
         </tr>
-        <tr>
-          <td>
+        <tr class = "line-horizontal-td">
+          <td class="line-vertical-td">
               <ul class="d-flex">
-              <li>
-                <div class"form-check"> <label class="form-check-label"> 
-                <input class="checkbox" type="checkbox"> バイト
-                <i class="input-helper"> </i> <label>
-                </div> <i class="remove mdi mdi-close-circle-outline"></i>
+              <li>              
+                <input class="checkbox" type="checkbox"> バイト   
               </li>
           </td>
           <td>
-          
+          <div class="remove-button"><span></span></div>
           </td>
-          <td>
-          
+          <td class="line-vertical-td">        
+          </td>
+          <td>         
           </td>
         </tr>
-        <tr>
-          <td>
+        <tr class="noline">
+          <td class="line-vertical-td">
               <ul class="d-flex">
               <li>
-                <div class"form-check"> <label class="form-check-label"> 
-                <input class="checkbox" type="checkbox" checked=""> DataBase
-                <i class="input-helper"> </i> <label>
-                </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                <input class="checkbox" type="checkbox" checked="">DataBase           
               </li>
           </td>
           <td>
+          <div class="remove-button"><span></span></div>
+          </td>
+          <td class="line-vertical-td">
           2020 12/4 (4days)
           </td>
           <td>
           Done
           </td>
         </tr>
-
-
+        </div>
     </table>
-</div>
 <body>
-
-
 
 </html>

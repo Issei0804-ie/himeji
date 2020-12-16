@@ -1,20 +1,134 @@
+body{
+  margin: 0;
+  color: #000000; /*文字の色*/
+  background-color: #F5FFFA; /*背景*/
+}
+
+.title{
+  padding: 40px;
+  font-family: Comic Sans MS;
+  text-align: center;
+  color: #99FF99;
+  /*text-shadow: 1px 1px 0 #000*/
+  text-shadow: 2px 2px 0 #000, 
+               -2px 2px 0 #000,
+                2px -2px 0 #000,
+               -2px -2px 0 #000;
+
+  text-shadow: 2px 2px 1px #000,
+               -2px 2px 1px #000,
+               2px -2px 1px #000,
+               -2px -2px 1px #000;
+  margin-bottom: 0.625rem;
+  text-transform: capitalize; /*単語の先頭を大文字に*/
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.add-tasks{
+  box-sizing: border-box;
+  /*margin: 0 auto;*/
+  margin-left: 550px;
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.add-tasks input[type="text"]{
+  border: 1px solid #999;
+  padding: 3px 5px;
+  border-radius: 20px;
+  height: 2.0em;
+  width: 245px;
+  overflow: hidden;
+}
+.add-tasks input[type="text"]:focus {
+  outline: 0;
+}
+
+.add-button{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.add-button:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.text-color{
+  color: #000000; /*tableの文字の色*/
+  background-color: #F5FFFA; /*tableの左側と右側の色*/
+}
+
 .table-line{
-  width:100%;
-  border-collapse:collapse;
+  width:60%;
+  margin: 0 auto; 
+ /* max-width: 500px;*/
+  background-color: #FFFFFF; /*tableの背景*/
+  border-collapse:collapse; /*隣接するセルの表示*/
   border:1px solid;
   font-size:12px;
 }
-  th{
-    padding:10px;
-    text-align:left;
-    border-bottom:1px solid;
-    border-right:1px solid;
-  }
-  td{
-    padding: 10px
-    border-bottom:1px solid;
-    border-right:1px solid;
-  }
 
+.line-horizontal-th{
+  padding:10px;
+  text-align:left;
+  border-bottom:1px solid;
+}
+.line-horizontal-td{
+  padding: 10px
+  text-align:left;
+  border-bottom:1px solid #ccc;
+}
+.line-vertical-th{
+  padding:10px;
+  border-right:1px solid;
+}
+.line-vertical-td{
+  padding:10px;
+  border-right:1px solid;
+}
 
-<!-- コメント -->
+.text-box{
+  display: inline-block; 
+} 
+
+.remove-button{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	position: relative;
+	/*border: 1px solid rgba(0,0,0,.1);*/
+	cursor: pointer;
+}
+.remove-button span::before,
+.remove-button span::after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 52%;
+    right: 20pt;
+	width: 84%;
+	height: 16%;
+	/*margin: -8% 0 0 1000%;*/
+	background: #FF3333;
+}
+.remove-button span::before {
+	transform: rotate(-45deg);
+}
+.remove-button span::after {
+	transform: rotate(45deg);
+}
+ 
+ 
+ 
+ 
+ 
+ 
