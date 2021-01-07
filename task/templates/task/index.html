@@ -1,0 +1,44 @@
+{% extends 'task/base.html' %}
+
+{% block content %}
+   {% if messages %}
+      {% for message in messages %}
+         <div class="alert alert-success" role="alert">
+            <button class="close" data-dismiss="alert">
+               <small><sup>x</sup></small>
+            </button>
+            {{ message }}
+         </div>
+      {% endfor %}
+   {% endif %}
+   
+   {% if all_items %}
+      <table class="table table-bordered">
+         {% for task in all_items %}
+            {% if task.completed %}
+                <tr class="table-secondary">
+                   <td class="striker">{{ task.item }}</td>
+                   <td class="striker">{{ task.deadline }}</td>
+                   <td><center>Completed</center></td>
+                   <td><center><a href="{% url 'delete' task.id %}"><div class="bg-warning rounded">Delete</div></a></center></td>
+                </tr>
+             {% else %}
+                <tr class="table-info">
+                   <td>{{ task.item }}</td>
+                   <td>{{ task.deadline }}</td>
+                   <td><center><a href="{% url 'complete' task.id %}"><div class="bg-light rounded">Complete</div></a></center></td>
+                   <td><center><a href="{% url 'delete' task.id %}"><div class="bg-light rounded">Delete</div></a></center></td>
+                </tr>
+             {% endif %}
+          {% endfor %}
+      </table>
+      {% endif %}
+      
+   <form class="form-inline my-2 my-lg-0" method="POST">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" placeholder="To-Do Item" name="item">
+      <input type="date" placeholder="xxxx-yy-zz" name="deadline">
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Add To List</button>
+   </form>
+   
+{% endblock %}
