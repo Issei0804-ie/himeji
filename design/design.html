@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="design.css">
   <title>To Do List</title>
-<head>
+</head>
 
 <body>
   <h1 class="title">To Do List</h1>
 
-  <div class="center-character"><p class="heading">create a task</p></div>
+  <div class="center-character"><p class="heading"></p></div>
  
   <div class="box">
       <div class="add-tasks">
@@ -32,75 +32,73 @@
           <th class="line-vertical-th">Deadline</th>
           <th>Status</th>
         </tr>
-        <tr class = "line-horizontal-td">
-          <td class = "line-vertical-td">
-              <ul class="d-flex">
+        <tr class="line-horizontal-td">
+          <td class="line-vertical-td">
               <li>                
-                <input class="checkbox" type="checkbox"> 
-                <div class="text-box"> Soft ware </div>               
+                <input class="checkbox" type="checkbox" name="judge" onclick="checks(1,1)" > Soft ware 
+                            
               </li>       
           </td>
           <td>
-          <div class="remove-button"><span></span></div>
+          <div class="remove-button" onclick="checks(1,2)"><span></span></div>
           </td>
           <td class="line-vertical-td">
           2020 12/10 (10days)
           </td>
           <td>
-          to do
+          <div class="check_input(1)" id="str1">yet</div>
           </td>
         </tr>        
-        <tr class = "line-horizontal-td">
+        <tr class="line-horizontal-td">
           <td class="line-vertical-td">
-              <ul class="d-flex">
               <li>                
-                <input class="checkbox" type="checkbox" checked=""> OS        
+                <input class="checkbox" name="check1" type="checkbox" onclick="checks(2,1)"> OS        
               </li>
           </td>
           <td>
-          <div class="remove-button"><span></span></div>
+          <div class="remove-button" onclick="checks(2,2)"><span></span></div>
           </td>
           <td class="line-vertical-td">
           2020 12/1 (1days)
           </td>
           <td>
-          to do
+          <div class="check_input(2)" id="str2">yet</div>
           </td>
         </tr>
         <tr class = "line-horizontal-td">
           <td class="line-vertical-td">
-              <ul class="d-flex">
               <li>              
-                <input class="checkbox" type="checkbox"> バイト   
+                <input class="checkbox" name="check1" type="checkbox" onclick="checks(3,1)"> バイト   
               </li>
           </td>
           <td>
-          <div class="remove-button"><span></span></div>
+          <div class="remove-button" onclick="checks(3,2)"><span></span></div>
           </td>
           <td class="line-vertical-td">        
           </td>
-          <td>         
+          <td> 
+            <div class="check_input(3)" id="str3">yet</div>        
           </td>
         </tr>
         <tr class="noline">
           <td class="line-vertical-td">
-              <ul class="d-flex">
               <li>
-                <input class="checkbox" type="checkbox" checked="">DataBase           
+                <input class="checkbox" name="check1" type="checkbox" onclick="checks(4,1)"> DataBase           
               </li>
           </td>
           <td>
-          <div class="remove-button"><span></span></div>
+          <div class="remove-button" onclick="checks(4,2)"><span></span></div>
           </td>
           <td class="line-vertical-td">
           2020 12/4 (4days)
           </td>
           <td>
-          Done
+          <div class="check_input(4)" id="str4">yet</div>
           </td>
         </tr>
-        </div>
     </table>
-<body>
+    </div>
+    <script type="text/javascript" src="design.js"></script>
+  </body>
 
 </html>
