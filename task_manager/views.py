@@ -27,3 +27,13 @@ def register(request):
 
     return HttpResponseBadRequest()
 
+def login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
+        # タスク表示画面にリダイレクト
+        return HttpResponseRedirect("")
+    context = {}
+    return render(request, 'task_manager', context)
