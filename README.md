@@ -1,10 +1,12 @@
 # himeji
 
 ```
+# pipenv のインストール
 $ brew install pipenv
-$ #このプロジェクトにcd
-$ pipenv run python
-$ #3.9が出てきたらok
+
+$ #このプロジェクトにcdした後,パッケージのインストール
+$ pipenv install
+
 $ #開発用サーバーを立ち上げる場合
 $ pipenv run start
 ```
