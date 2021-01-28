@@ -11,10 +11,21 @@
   <form action="/task_manager/login" method="post">
   <label>Login</label>
   
-  <input placeholder="Username" value="username" type="text"/>
-  <input placeholder="Password" value="password" type="password">
+  <input placeholder="Username" name="username" type="text"/>
+  <input placeholder="Password" name="password" type="password">
 
   <button class="btn">Log in</button>
+  {% csrf_token %}
+  <!-- <a action=/task_manager/ placeholder="アカウントをお持ちでない方は">アカウント作成</a> -->
+  </form>
+
+  <form action="/task_manager/register" method="post">
+  <label>Register</label>
+
+  <input placeholder="Username" name="username" type="text"/>
+  <input placeholder="Password" name="password" type="password">
+
+  <button class="btn">Register</button>
   {% csrf_token %}
   <!-- <a action=/task_manager/ placeholder="アカウントをお持ちでない方は">アカウント作成</a> -->
   </form>

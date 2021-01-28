@@ -4,17 +4,21 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadReque
 from django.template import loader
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from task import views
 
 
 def index(request):
     context = {}
     template = loader.get_template('task_manager/login.html')
-    
+
     return HttpResponse(template.render(context, request))
 
+
 def register(request):
-    request_username = request.POST['username']
-    request_password = request.POST['password']
+    request_username = request.POST.get('username', '')
+    request_password = request.POST.get('password', '')
+    if request_password is '' and request_username is '':
+        return HttpResponseRedirect('/task_manager/')
 
     try:
         User.objects.get(username=request_username)
@@ -23,17 +27,16 @@ def register(request):
         user.save()
         result = authenticate(username=request_username, password=request_password)
         if result is not None:
-            return HttpResponseRedirect('task_manager')
+            return HttpResponseRedirect('/task/')
 
-    return HttpResponseBadRequest()
+    return HttpResponseRedirect('/task_manager/')
+
 
 def login(request):
-    username = request.POST['username']
-    password = request.POST['password']
+    username = request.POST.get('username', '')
+    password = request.POST.get('password', '')
     user = authenticate(username=username, password=password)
     if user is not None:
-        login(request, user)
         # タスク表示画面にリダイレクト
-        return HttpResponseRedirect("")
-    context = {}
-    return render(request, 'task_manager', context)
+        return HttpResponseRedirect('/task/')
+    return HttpResponseRedirect('/task_manager/')
