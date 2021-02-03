@@ -1,11 +1,15 @@
+<!--
 <!doctype html>
 <html lang="en">
 <head>
+-->
 <!-- Required meta tags -->
+<!--
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+-->
     <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<!--
     <title>Todo List</title>
 <style>
 .striker {
@@ -21,5 +25,75 @@ text-decoration: line-through;
 {% endblock %}
 </div>
 </body>
+
+</html>
+-->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'task/design.css' %}">
+  <title>To Do List</title>
+</head>
+
+<body>
+  <h1 class="title">To Do List</h1>
+  <div class="center-character"><p class="heading"></p></div>
+  <form method="POST">
+      {% csrf_token %}
+      <div class="box">
+          <div class="add-tasks">
+            <input type="text" placeholder="title..." name="item">
+          </div>
+          <div class="add-tasks">
+            <input type="date" placeholder="xxxx-yy-zz" name="deadline">
+          </div>
+          <button class="add-button" type="submit">ADD</button>
+      </div>
+  </form>
+
+    <div class="table-color">
+
+    <table class="table-line">
+
+        <tr class="line-horizontal-th">
+          <th class="line-vertical-th">Tasks</th>
+          <th></th>
+          <th class="line-vertical-th">Deadline</th>
+          <th>Status</th>
+        </tr>
+        {% if all_items %}
+            {% for task in all_items %}
+                <tr class="line-horizontal-td">
+                    <td class="line-vertical-td">
+                        <li>
+                        <input class="checkbox" type="checkbox" name="judge" onclick="checks(1,1)" > {{ task.item }}
+                        </li>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete' task.id %}"><div class="remove-button" onclick="checks(1,2)"><span></span></div></a>
+                        <!--<td><center><a href="{% url 'delete' task.id %}"><div class="bg-light rounded">Delete</div></a></center></td>-->
+                    </td>
+                    <td class="line-vertical-td">
+                        {{ task.deadline }}
+                    </td>
+                    <td>
+                        {% if task.complate %}
+                            <div>done</div>
+                        {% else %}
+                            <a href="{% url 'complete' task.id %}"><div>yet</div></a>
+                        {% endif %}
+                            <!-- <div class="check_input(1)" id="str1">yet</div> -->
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+    </table>
+    </div>
+    <script type="text/javascript" src="{% static 'task/design.js' %}"></script>
+  </body>
 
 </html>

@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadReque
 from django.template import loader
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from task import views
+from django.contrib.auth import login as dlogin
 
 
 def index(request):
@@ -17,7 +17,7 @@ def index(request):
 def register(request):
     request_username = request.POST.get('username', '')
     request_password = request.POST.get('password', '')
-    if request_password is '' and request_username is '':
+    if request_password == '' and request_username == '':
         return HttpResponseRedirect('/task_manager/')
 
     try:
@@ -37,6 +37,7 @@ def login(request):
     password = request.POST.get('password', '')
     user = authenticate(username=username, password=password)
     if user is not None:
+        dlogin(request, user)
         # タスク表示画面にリダイレクト
         return HttpResponseRedirect('/task/')
     return HttpResponseRedirect('/task_manager/')

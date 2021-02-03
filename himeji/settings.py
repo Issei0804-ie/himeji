@@ -52,6 +52,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'himeji.urls'
+LOGIN_URL='task_manager:'     # ログイン
+LOGOUT_URL='task_manager:'   # ログアウト
 
 TEMPLATES = [
     {
