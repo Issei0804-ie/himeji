@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="login.css">
   <title>Login</title>
-<head>
+</head>
 
 <body>
-  <form>
-  <h1>Login</h1>
-  <input placeholder="Username" type="text"/>
-  <input placeholder="Password" type="password">
-  <button class="btn">Log in</button>
+  <form action="/task_manager/login" method="post">
+  <label>Login</label>
+  
+  <input placeholder="Username" name="username" type="text"/>
+  <input placeholder="Password" name="password" type="password">
 
+  <button class="btn">Log in</button>
+  {% csrf_token %}
+  <!-- <a action=/task_manager/ placeholder="アカウントをお持ちでない方は">アカウント作成</a> -->
   </form>
 
-<body>
+  <form action="/task_manager/register" method="post">
+  <label>Register</label>
+
+  <input placeholder="Username" name="username" type="text"/>
+  <input placeholder="Password" name="password" type="password">
+
+  <button class="btn">Register</button>
+  {% csrf_token %}
+  <!-- <a action=/task_manager/ placeholder="アカウントをお持ちでない方は">アカウント作成</a> -->
+  </form>
+</body>
+
 </html>

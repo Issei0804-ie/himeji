@@ -20,5 +20,6 @@ from django.urls import path,include
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
-    path('task_manager/',include('task_manager.urls'))
+    path('task_manager/',include('task_manager.urls')),
+    path('task/', include('task.urls'))
 ]

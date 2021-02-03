@@ -130,8 +130,6 @@ body{
 }
 .line-horizontal-td{
   padding: 10px
-  text-align:left;
-  border-bottom:1px solid #ccc;
 }
 .line-vertical-th{
   padding:10px;
@@ -142,9 +140,9 @@ body{
   border-right:1px solid;
 }
 
-.text-box{
+/* .text-box{∫
   display: inline-block; 
-} 
+}  */
 
 .remove-button{
 	display: inline-block;
